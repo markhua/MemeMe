@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeObject: NSObject {
+class MemeObject {
     
     var topText: String
     var bottomText: String

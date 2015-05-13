@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
 
     //@IBOutlet weak var ImagePicked: UIImageView!
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var memes: [MemeObject]!
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         imagePickerCamera.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareImage.enabled = false
         if let image = imagePickerView.image  { shareImage.enabled = true }
@@ -29,25 +30,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         let memeTextAttributes = [
             NSStrokeColorAttributeName : UIColor.whiteColor(),
             NSForegroundColorAttributeName : UIColor.whiteColor(),
             NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
             NSStrokeWidthAttributeName : 0
         ]
-        super.viewDidLoad()
-        UpperText.delegate = self
-        BottomText.delegate = self
-        UpperText.defaultTextAttributes = memeTextAttributes
-        BottomText.defaultTextAttributes = memeTextAttributes
-        UpperText.text = "TOP MEME"
-        BottomText.text = "BOTTOM MEME"
-        UpperText.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
-        BottomText.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
-        UpperText.textAlignment = NSTextAlignment.Center
-        BottomText.textAlignment = NSTextAlignment.Center
+        
+        //Set the default attribute of both text fields
+        setTextField(UpperText, attribute: memeTextAttributes, textvalue: "TOP MEME")
+        setTextField(BottomText, attribute: memeTextAttributes, textvalue: "BOTTOM MEME")
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    //Set attribute for text fields
+    func setTextField (textfield :UITextField, attribute : [String : NSObject], textvalue : String )
+    {
+        textfield.delegate = self
+        textfield.defaultTextAttributes = attribute
+        textfield.text = textvalue
+        textfield.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        textfield.textAlignment = NSTextAlignment.Center
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -73,7 +79,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        if self.BottomText.isFirstResponder() {
+        //Move the view when the user edit the bottom text field and prevent moving multiple times
+        if (self.BottomText.isFirstResponder()) && (self.view.frame.origin.y == 0){
             self.view.frame.origin.y -= getKeyboardHeight(notification)
         }
         self.subscribeToKeyboardHideNotifications()
@@ -81,7 +88,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillHide(notification: NSNotification) {
         if self.BottomText.isFirstResponder(){
-            self.view.frame.origin.y += getKeyboardHeight(notification)
+            self.view.frame.origin.y = 0
         }
         self.unsubscribeToKeyboardHideNotifications()
     }

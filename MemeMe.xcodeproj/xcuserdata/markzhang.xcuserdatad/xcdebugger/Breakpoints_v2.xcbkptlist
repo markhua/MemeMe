@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MemeMe/ViewController.swift"
-            timestampString = "453080234.030937"
+            filePath = "MemeMe/MemeEditorViewController.swift"
+            timestampString = "453212240.048193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "ViewController"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "MemeEditorViewController"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,12 +25,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MemeMe/ViewController.swift"
-            timestampString = "453080234.030937"
+            filePath = "MemeMe/MemeEditorViewController.swift"
+            timestampString = "453212240.048193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "subscribeToKeyboardNotifications()"
             landmarkType = "5">
          </BreakpointContent>
@@ -41,12 +41,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MemeMe/ViewController.swift"
-            timestampString = "453080234.030937"
+            filePath = "MemeMe/MemeEditorViewController.swift"
+            timestampString = "453212240.048193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "setMemeColor(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -80,6 +80,22 @@
             startingLineNumber = "47"
             endingLineNumber = "47"
             landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMe/MemeEditorViewController.swift"
+            timestampString = "453212240.048193"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "keyboardWillShow(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

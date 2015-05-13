@@ -21,7 +21,7 @@ class ColorPickerViewController: UIViewController, UICollectionViewDelegate, UIC
     // Global variables
     var tag: Int = 0
     var color: UIColor = UIColor.grayColor()
-    var delegate: ViewController? = nil
+    var delegate: MemeEditorViewController? = nil
     
     // This function converts from HTML colors (hex strings of the form '#ffffff') to UIColors
     func hexStringToUIColor (hex:String) -> UIColor {

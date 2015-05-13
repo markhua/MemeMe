@@ -22,7 +22,7 @@
 		<key>1F9F8449C32E2729F16CD808FBE5B0BD4F4A613D</key>
 		<string>../..</string>
 		<key>D51725311926FA3EDAF177527B6E091D6FB0520F</key>
-		<string>../..MemeMe/</string>
+		<string>../..MemeMe</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/markhua/MemeMe.git</string>
@@ -46,7 +46,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>D51725311926FA3EDAF177527B6E091D6FB0520F</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MemeMe</string>
+			<string>MemeMeMemeMe</string>
 		</dict>
 	</array>
 </dict>
